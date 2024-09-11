@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.train-coach-container {
+  align-self: center;
+  border: 3px solid #333;
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-radius: 15px;
+  max-width: 2000%; /* Adjusted for better responsiveness */
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-x: auto; /* Added horizontal scroll if needed */
+}
+
+.seat-row {
+  display: flex;/* Allow wrapping of seats if needed */
+  justify-content: space-around; /* Spread seats evenly */
+  margin-bottom: 15px;
+}
+
+.seat {
+  width: 10vw; /* Responsive width */
+  height: 10vw; /* Responsive height */
+  max-width: 50px; /* Max width for large screens */
+  max-height: 50px; /* Max height for large screens */
+  background-color: #a0d8f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: 2px solid #888;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  margin: 2px; /* Space between seats */
+}
+
+.seat:hover {
+  background-color: #81c8e3;
+}
+
+/* Classes to represent different seat states */
+.selected { background-color: #4CAF50; }
+.booked { background-color: #ccc; }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

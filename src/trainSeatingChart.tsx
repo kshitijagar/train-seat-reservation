@@ -20,10 +20,10 @@ const TrainSeatingChart: React.FC = () => {
 
   const [seats, setSeats] = useState<Seat[]>([]);
   const [price, setPrice] = useState(0);
-  const [num, setNum] = useState(1); // Number of seats to book
-  const [name, setName] = useState(''); // User's name
-  const [email, setEmail] = useState(''); // User's email
-  const [loading, setLoading] = useState(false); // Loading state
+  const [num, setNum] = useState(1); 
+  const [name, setName] = useState('');  
+  const [email, setEmail] = useState('');  
+  const [loading, setLoading] = useState(false); 
 
   const initSeats = async (): Promise<Seat[]> => {
     const data: Seat[] = [];
@@ -35,7 +35,7 @@ const TrainSeatingChart: React.FC = () => {
         id: item.id,
         sel: false,
         booked: item.booked || false,
-        price: r === 4 ? 380 : 130, // Exit row price: 380, Standard price: 130
+        price: r === 4 ? 380 : 130,
         type: r === 4 ? 'exit' : 'standard',
         r,
         c,
@@ -159,7 +159,7 @@ const TrainSeatingChart: React.FC = () => {
       return;
     }
 
-    setLoading(true); // Start loading spinner
+    setLoading(true);
 
     const ids = sel.map((s) => s.id);
     const unavail: string[] = [];
@@ -177,7 +177,7 @@ const TrainSeatingChart: React.FC = () => {
 
     if (unavail.length > 0) {
       alert(`Seats already booked: ${unavail.join(', ')}`);
-      setLoading(false); // Stop loading spinner
+      setLoading(false);
       return;
     }
 
@@ -199,12 +199,12 @@ const TrainSeatingChart: React.FC = () => {
 
       alert(`Booking confirmed for ${name} (${email}). Seats: ${ids.join(', ')}`);
 
-      setLoading(false); // Stop loading spinner
-      window.location.reload(); // Refresh page after user clicks "OK" on the alert
+      setLoading(false); 
+      window.location.reload();
     } catch (error) {
       console.error('Booking error: ', error);
       alert('Booking failed. Try again.');
-      setLoading(false); // Stop loading spinner
+      setLoading(false);
     }
   };
 
@@ -218,8 +218,6 @@ const TrainSeatingChart: React.FC = () => {
   return (
     <div className="p-8 bg-gray-100 font-sans relative">
       <h1 className="text-3xl font-bold mb-6 text-center">Train Seat Reservation</h1>
-      
-      {/* User's name and email input */}
       <div className="mb-6 text-center">
         <label className="block mb-2">Name:</label>
         <input

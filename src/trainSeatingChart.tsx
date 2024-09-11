@@ -217,7 +217,6 @@ const TrainSeatingChart: React.FC = () => {
 
   return (
     <div className="p-8 bg-gray-100 font-sans relative">
-      <h1 className="text-3xl font-bold mb-6 text-center">Train Seat Reservation</h1>
       <div className="mb-6 text-center">
         <label className="block mb-2">Name:</label>
         <input
